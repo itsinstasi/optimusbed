@@ -1,4 +1,4 @@
 ﻿User-agent: *
-Sitemap: https://optimusbed.itsinsta.site//sitemap.xml
+Sitemap: https://optimusbed.itsinsta.site/sitemap.xml
 Disallow: /main.html
 Disallow: /main
