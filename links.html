@@ -141,7 +141,8 @@
 
 
 
-						<div class="links-page-blc">
+						<div class="links-page-blc" style="
+">
 							<div class="links-page-blc__txt">
 								<p>Сэкономь до 3 м² квартиры!<br/>
 - Стальной каркас<br/>
@@ -225,7 +226,8 @@
 
 						<div class="links-page-title">АДРЕС</div>
 
-						<div class="links-page-blc">
+						<div class="links-page-blc" style="
+">
 							<div class="links-page-blc__txt">
 								<p>г. Казань, ул. Ф. Амирхана, 12а</p>
 							</div>
@@ -296,6 +298,17 @@ $(document).ready(function(){
                 contentType: 'application/json',
 		data : form_data
 	}).done(function(response){
+	    var email = response.email;
+		if (email) {
+	        $("#leadSent").text("Ваш запрос отправлен на " + email);
+		} else {
+	        $("#leadSent").text("Ваш запрос отправлен");
+		}
+
+		var input = form.find('input');
+		input.attr('readonly', true);
+        input.attr("disabled", true);
+		form.find('button').attr("disabled", true);
 	}).fail(function(){
 	});
 
